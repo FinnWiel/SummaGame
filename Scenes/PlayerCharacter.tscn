@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bljchmhxttxjb"]
 
 [ext_resource type="Texture2D" uid="uid://cc70w3w0x68qf" path="res://Assets/character_animations/IdleR_strip4.png" id="1_nj01r"]
-[ext_resource type="Script" path="res://Scenes/PlayerCharacter.gd" id="1_pvbls"]
+[ext_resource type="Script" path="res://Scripts/PlayerCharacter.gd" id="1_pvbls"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hfpi1"]
 atlas = ExtResource("1_nj01r")
