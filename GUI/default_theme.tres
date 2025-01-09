@@ -20,7 +20,7 @@ content_margin_left = 24.0
 content_margin_top = 24.0
 content_margin_right = 24.0
 content_margin_bottom = 24.0
-bg_color = Color(0.980392, 1, 0.52549, 1)
+bg_color = Color(0.980392, 0.921569, 0.52549, 1)
 border_width_left = 6
 border_width_top = 6
 border_width_right = 6
@@ -46,8 +46,8 @@ shadow_size = 3
 shadow_offset = Vector2(0, 6)
 
 [resource]
-Button/colors/font_color = Color(0.154876, 0.154876, 0.154876, 1)
-Button/colors/font_focus_color = Color(0.14902, 0.14902, 0.14902, 1)
+Button/colors/font_color = Color(0.152941, 0.152941, 0.152941, 1)
+Button/colors/font_focus_color = Color(0.14902, 0.145098, 0.14902, 1)
 Button/colors/font_hover_color = Color(0.14902, 0.14902, 0.14902, 1)
 Button/font_sizes/font_size = 24
 Button/styles/hover = SubResource("StyleBoxFlat_04cbs")

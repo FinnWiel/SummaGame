@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://drgvesn7rctq"]
+
+[ext_resource type="PackedScene" uid="uid://gjsfs5kl13vm" path="res://GUI/lvl_btn.tscn" id="1_lcmh8"]
+
+[node name="TestingLevelMaicol" type="Node2D"]
+
+[node name="BackBtn" parent="." instance=ExtResource("1_lcmh8")]
+custom_minimum_size = Vector2(80, 60)
+offset_left = 33.0
+offset_top = 27.0
+offset_right = 162.0
+offset_bottom = 109.0
+pivot_offset = Vector2(65, 41)
+text = "Back"
+level_path = "res://gui/level_select_screen.tscn"

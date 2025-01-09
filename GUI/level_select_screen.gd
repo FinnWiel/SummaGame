@@ -1,9 +1,9 @@
 extends Control
 
-const LEVEL_BTN = preload("res://gui/lvl_btn.tscn")
+const LEVEL_BTN = preload("res://GUI/lvl_btn.tscn")
 @export_dir var dir_path
 
-@onready var grid = $MarginContainer/VBoxContainer/GridContainer
+@onready var grid: GridContainer = $MarginContainer/VBoxContainer/GridContainer
 
 func _ready() -> void:
 	get_levels(dir_path)

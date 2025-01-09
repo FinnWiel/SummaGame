@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_q2hyr")
 script = ExtResource("2_1jfsw")
-dir_path = "res://levels"
+dir_path = "res://Game"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
