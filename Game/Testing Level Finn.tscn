@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cggxh1hrhc6rf"]
+[gd_scene load_steps=4 format=3 uid="uid://cggxh1hrhc6rf"]
 
+[ext_resource type="PackedScene" uid="uid://bljchmhxttxjb" path="res://Scenes/PlayerCharacter.tscn" id="2_6camv"]
 [ext_resource type="PackedScene" uid="uid://gjsfs5kl13vm" path="res://GUI/lvl_btn.tscn" id="2_wd8yr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t31aa"]
 
 [node name="TestingLevelFinn" type="Node2D"]
 
@@ -13,3 +16,16 @@ offset_bottom = 109.0
 pivot_offset = Vector2(65, 41)
 text = "Back"
 level_path = "res://gui/level_select_screen.tscn"
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_6camv")]
+position = Vector2(645, 364)
+scale = Vector2(4, 4)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(641, 359)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(642, 422)
+shape = SubResource("WorldBoundaryShape2D_t31aa")
