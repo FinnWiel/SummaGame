@@ -156,11 +156,10 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wk1o3"]
-radius = 4.2
-height = 15.2
+radius = 4.0
+height = 12.0
 
 [node name="PlayerCharacter" type="CharacterBody2D"]
-scale = Vector2(10, 10)
 script = ExtResource("1_pvbls")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -169,8 +168,5 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.2, 0.5)
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_wk1o3")
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -5.9)

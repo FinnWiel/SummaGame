@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Select Level Screen Final"
+config/name="Summa"
 run/main_scene="res://GUI/level_select_screen.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://icon.png"
