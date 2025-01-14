@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2q2y8purpg6r"]
+
+[ext_resource type="Texture2D" uid="uid://cgwh0g8ya0r3u" path="res://Assets/effects/dust/smoke_dust.png" id="1_hs6qm"]
+[ext_resource type="Texture2D" uid="uid://bnvxpg5pvv4p" path="res://Assets/effects/dust/smoke_dust_2.png" id="2_qvwdy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbmjj"]
+atlas = ExtResource("1_hs6qm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b06sx"]
+atlas = ExtResource("2_qvwdy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6l66m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbmjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b06sx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mn8bv"]
+radius = 3.0
+height = 11.5
+
+[node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="Smoke" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_6l66m")
+autoplay = "default"
+frame_progress = 0.566012
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 0)
+rotation = 1.5708
+scale = Vector2(4, 4)
+shape = SubResource("CapsuleShape2D_mn8bv")
+disabled = true

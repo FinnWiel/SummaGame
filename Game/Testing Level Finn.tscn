@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cggxh1hrhc6rf"]
+[gd_scene load_steps=9 format=4 uid="uid://cggxh1hrhc6rf"]
 
 [ext_resource type="PackedScene" uid="uid://bljchmhxttxjb" path="res://Scenes/PlayerCharacter.tscn" id="2_6camv"]
 [ext_resource type="Texture2D" uid="uid://qqbchvllsyu8" path="res://Assets/tilesets/8x8_nature.png" id="3_3uoas"]
@@ -653,6 +653,11 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_w8hxo")
 sources/2 = SubResource("TileSetAtlasSource_e6m3x")
 
+[sub_resource type="GDScript" id="GDScript_qdyxx"]
+script/source = "extends Node2D
+
+"
+
 [node name="TestingLevelFinn" type="Node2D"]
 
 [node name="Midground" type="TileMapLayer" parent="."]
@@ -665,12 +670,7 @@ rendering_quadrant_size = 8
 position = Vector2(645, 364)
 scale = Vector2(4, 4)
 
-[node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
-position = Vector2(-1, -1.25)
-scale = Vector2(0.25, 0.25)
-position_smoothing_enabled = true
-position_smoothing_speed = 2.0
-
 [node name="EnemySpriteTest" parent="." instance=ExtResource("4_cmtty")]
 position = Vector2(508, 384)
 scale = Vector2(4, 4)
+script = SubResource("GDScript_qdyxx")

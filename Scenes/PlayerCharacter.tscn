@@ -1,10 +1,19 @@
-[gd_scene load_steps=26 format=3 uid="uid://bljchmhxttxjb"]
+[gd_scene load_steps=29 format=3 uid="uid://bljchmhxttxjb"]
 
 [ext_resource type="Texture2D" uid="uid://cc70w3w0x68qf" path="res://Assets/character_animations/IdleR_strip4.png" id="1_nj01r"]
 [ext_resource type="Script" path="res://Scripts/PlayerCharacter.gd" id="1_pvbls"]
 [ext_resource type="Texture2D" uid="uid://bvdnbbh1nslwf" path="res://Assets/character_animations/JumpR_strip4.png" id="3_drd7e"]
+[ext_resource type="Texture2D" uid="uid://dafmmnx68y770" path="res://Assets/character_animations/PushCrateR_strip8.png" id="4_1aov7"]
 [ext_resource type="Texture2D" uid="uid://4vny8xs2g082" path="res://Assets/character_animations/FallR_strip2.png" id="4_5d0s8"]
 [ext_resource type="Texture2D" uid="uid://boewo46r0oqvg" path="res://Assets/character_animations/WalkR_strip8.png" id="5_21fiy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4pyl"]
+atlas = ExtResource("4_1aov7")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3868n"]
+atlas = ExtResource("4_1aov7")
+region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h2iby"]
 atlas = ExtResource("4_5d0s8")
@@ -82,6 +91,17 @@ region = Rect2(224, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_s4pyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3868n")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_h2iby")
 }, {
 "duration": 1.0,
@@ -157,7 +177,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wk1o3"]
 radius = 4.2
-height = 15.2
+height = 14.8
 
 [node name="PlayerCharacter" type="CharacterBody2D"]
 scale = Vector2(10, 10)
@@ -165,8 +185,10 @@ script = ExtResource("1_pvbls")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g5jyc")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.2, 0.5)
@@ -174,3 +196,10 @@ shape = SubResource("CapsuleShape2D_wk1o3")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, -5.9)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[node name="AttackPoint" type="Marker2D" parent="."]
+position = Vector2(9.1, 0.8)
