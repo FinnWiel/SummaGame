@@ -104,3 +104,5 @@ func shoot_projectile() -> void:
 	# Flip the projectile sprite based on direction
 	var sprite = projectile.get_node("Smoke")  # Assuming "Smoke" is the name of the sprite node
 	sprite.flip_h = direction < 0 
+	
+	
