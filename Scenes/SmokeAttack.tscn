@@ -29,7 +29,7 @@ animations = [{
 radius = 3.0
 height = 11.5
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="SmokeAttack" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
