@@ -198,6 +198,7 @@ shape = SubResource("CapsuleShape2D_wk1o3")
 position = Vector2(0, -5.9)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 

@@ -34,7 +34,7 @@ func _on_body_entered(body: Node) -> void:
 		print("Slime HP:", hp)
 
 		# Change modulate color to red on hit
-		animated_sprite.modulate = Color(255, 0, 0)  # Red tint
+		animated_sprite.modulate = Color(225, 0, 0)  # Red tint
 		body.queue_free()
 		await get_tree().create_timer(.2).timeout
 		animated_sprite.modulate = Color(1, 1, 1)  # Default (white)
