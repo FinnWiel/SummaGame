@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://cggxh1hrhc6rf"]
+[gd_scene load_steps=9 format=4 uid="uid://cggxh1hrhc6rf"]
 
 [ext_resource type="PackedScene" uid="uid://bljchmhxttxjb" path="res://Scenes/PlayerCharacter.tscn" id="2_6camv"]
 [ext_resource type="Texture2D" uid="uid://qqbchvllsyu8" path="res://Assets/tilesets/8x8_nature.png" id="3_3uoas"]
 [ext_resource type="PackedScene" uid="uid://c5s0s1ni8yv1j" path="res://Scenes/Slime.tscn" id="4_cmtty"]
 [ext_resource type="Texture2D" uid="uid://u3pu4wbdpj8g" path="res://Assets/tilesets/blue-walls-8x8.png" id="4_f2mvh"]
+[ext_resource type="PackedScene" uid="uid://b10xyobtah24n" path="res://GUI/Game UI/GameUI.tscn" id="5_iel0n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8hxo"]
 texture = ExtResource("3_3uoas")
@@ -668,3 +669,8 @@ scale = Vector2(4, 4)
 [node name="Slime" parent="." instance=ExtResource("4_cmtty")]
 position = Vector2(470, 385)
 scale = Vector2(4, 4)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GameUI" parent="UI" instance=ExtResource("5_iel0n")]
+position = Vector2(13, 4)

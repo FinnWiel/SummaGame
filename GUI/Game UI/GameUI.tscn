@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://b10xyobtah24n"]
+
+[ext_resource type="Texture2D" uid="uid://plcb6djqqi5u" path="res://Assets/Heart&ManaUi.png" id="1_76xjy"]
+
+[node name="GameUI" type="Node2D"]
+position = Vector2(9, 1)
+scale = Vector2(2, 2)
+
+[node name="VBox" type="VBoxContainer" parent="."]
+offset_left = 11.5
+offset_top = 12.5
+offset_right = 11.5
+offset_bottom = 16.5
+
+[node name="Health" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="Health1" type="Sprite2D" parent="VBox/Health"]
+position = Vector2(13.5, 16.5)
+scale = Vector2(2, 2.061)
+texture = ExtResource("1_76xjy")
+region_enabled = true
+region_rect = Rect2(20.1963, 11.9381, 11.8785, 11.2693)
+
+[node name="Health2" type="Sprite2D" parent="VBox/Health"]
+position = Vector2(35, 16.5)
+scale = Vector2(2, 2.061)
+texture = ExtResource("1_76xjy")
+region_enabled = true
+region_rect = Rect2(20.196, 11.938, 11.878, 11.269)
+
+[node name="Health3" type="Sprite2D" parent="VBox/Health"]
+position = Vector2(56.5, 16.5)
+scale = Vector2(2, 2.061)
+texture = ExtResource("1_76xjy")
+region_enabled = true
+region_rect = Rect2(20.196, 11.938, 11.889, 11.21)
+
+[node name="Mana" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="Mana1" type="Sprite2D" parent="VBox/Mana"]
+position = Vector2(13, 35)
+scale = Vector2(2, 2.061)
+texture = ExtResource("1_76xjy")
+region_enabled = true
+region_rect = Rect2(20.5854, 37.4907, 10.9795, 11.1517)
+
+[node name="Mana2" type="Sprite2D" parent="VBox/Mana"]
+position = Vector2(34.5, 35)
+scale = Vector2(2, 2.061)
+texture = ExtResource("1_76xjy")
+region_enabled = true
+region_rect = Rect2(20.5854, 37.4907, 10.9795, 11.1517)
+
+[node name="Mana3" type="Sprite2D" parent="VBox/Mana"]
+position = Vector2(56, 35)
+scale = Vector2(2, 2.061)
+texture = ExtResource("1_76xjy")
+region_enabled = true
+region_rect = Rect2(20.585, 37.491, 10.979, 11.152)
