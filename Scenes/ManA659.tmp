@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6xsi212vkdsx"]
+
+[ext_resource type="Script" path="res://Scripts/Upgrades.gd" id="1_ga1kb"]
+[ext_resource type="Texture2D" uid="uid://cfhdwt10avox4" path="res://Assets/spritesheet_16x16.png" id="2_myfa2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnehf"]
+size = Vector2(14, 18)
+
+[node name="ManaUpgrade" type="Node2D"]
+script = ExtResource("1_ga1kb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_myfa2")
+region_enabled = true
+region_rect = Rect2(97.6191, 239.94, 12.7834, 16.1385)
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_wnehf")

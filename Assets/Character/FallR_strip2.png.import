@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cctelbyrebk13"
-path="res://.godot/imported/death_frame.png-07c2d9722d79b0f710823944c9c1160e.ctex"
+uid="uid://4vny8xs2g082"
+path="res://.godot/imported/FallR_strip2.png-2460c4381043110499af2af769e7ac4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/character_animations/death_frame.png"
-dest_files=["res://.godot/imported/death_frame.png-07c2d9722d79b0f710823944c9c1160e.ctex"]
+source_file="res://Assets/Character/FallR_strip2.png"
+dest_files=["res://.godot/imported/FallR_strip2.png-2460c4381043110499af2af769e7ac4f.ctex"]
 
 [params]
 

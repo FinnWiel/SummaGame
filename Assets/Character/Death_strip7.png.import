@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcb6q7xcqglhk"
-path="res://.godot/imported/FloatR_strip4.png-c115dbc445bd474ca45c55cebbb7ae5c.ctex"
+uid="uid://dbldvj2ocaei1"
+path="res://.godot/imported/Death_strip7.png-57a4d3df4793e49e4b0f1b66ccb471e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/character_animations/FloatR_strip4.png"
-dest_files=["res://.godot/imported/FloatR_strip4.png-c115dbc445bd474ca45c55cebbb7ae5c.ctex"]
+source_file="res://Assets/Character/Death_strip7.png"
+dest_files=["res://.godot/imported/Death_strip7.png-57a4d3df4793e49e4b0f1b66ccb471e2.ctex"]
 
 [params]
 

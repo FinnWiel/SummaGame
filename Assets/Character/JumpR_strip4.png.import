@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mewbkbieilpw"
-path="res://.godot/imported/background3.png-e1f87e2b85c4118c6377cf24bcdd9f8a.ctex"
+uid="uid://bvdnbbh1nslwf"
+path="res://.godot/imported/JumpR_strip4.png-a4bddcb8c45477ba184014c0dfe0a365.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/environment/backgrounds/background3.png"
-dest_files=["res://.godot/imported/background3.png-e1f87e2b85c4118c6377cf24bcdd9f8a.ctex"]
+source_file="res://Assets/Character/JumpR_strip4.png"
+dest_files=["res://.godot/imported/JumpR_strip4.png-a4bddcb8c45477ba184014c0dfe0a365.ctex"]
 
 [params]
 

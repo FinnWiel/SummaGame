@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2q2y8purpg6r"]
+[gd_scene load_steps=8 format=3 uid="uid://b2q2y8purpg6r"]
 
-[ext_resource type="Texture2D" uid="uid://cgwh0g8ya0r3u" path="res://Assets/effects/dust/smoke_dust.png" id="1_hs6qm"]
-[ext_resource type="Texture2D" uid="uid://bnvxpg5pvv4p" path="res://Assets/effects/dust/smoke_dust_2.png" id="2_qvwdy"]
+[ext_resource type="Script" path="res://Scripts/SmokeAttack.gd" id="1_bl3rv"]
+[ext_resource type="Texture2D" uid="uid://cgwh0g8ya0r3u" path="res://Assets/Effects/dust/smoke_dust.png" id="1_hs6qm"]
+[ext_resource type="Texture2D" uid="uid://bnvxpg5pvv4p" path="res://Assets/Effects/dust/smoke_dust_2.png" id="2_qvwdy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jbmjj"]
 atlas = ExtResource("1_hs6qm")
@@ -33,9 +34,10 @@ height = 11.5
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
+script = ExtResource("1_bl3rv")
 
 [node name="Smoke" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.14395, 0.482845, 0.827853, 1)
+modulate = Color(0.72549, 0.329412, 0.462745, 1)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_6l66m")
 autoplay = "default"

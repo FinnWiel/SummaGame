@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://c5s0s1ni8yv1j"]
 
 [ext_resource type="Script" path="res://Scripts/Slime.gd" id="1_0uov2"]
-[ext_resource type="Texture2D" uid="uid://d34lcaph4gko1" path="res://Assets/enemy_sprites/red-slime-spritesheet.png" id="1_8f3ls"]
+[ext_resource type="Texture2D" uid="uid://d34lcaph4gko1" path="res://Assets/Enemies/red-slime-spritesheet.png" id="1_8f3ls"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rkosh"]
 atlas = ExtResource("1_8f3ls")
@@ -86,8 +86,8 @@ autoplay = "default"
 frame_progress = 0.76415
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 11)

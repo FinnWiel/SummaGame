@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b47x1w837bdqq"
-path="res://.godot/imported/mini_smoke.png-5a31efe50f54960f890437ac6411f058.ctex"
+uid="uid://bhsnuyipt85gf"
+path="res://.godot/imported/3.png-2425559af19afdb072a4e2985dd6e093.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Effects/dust/mini_smoke.png"
-dest_files=["res://.godot/imported/mini_smoke.png-5a31efe50f54960f890437ac6411f058.ctex"]
+source_file="res://Assets/Background/Clouds 1/3.png"
+dest_files=["res://.godot/imported/3.png-2425559af19afdb072a4e2985dd6e093.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 extends Node2D
 
-const SPEED = 60
+const SPEED = 200
 
 var direction = 1
 var HP = 3 
@@ -11,7 +11,7 @@ var HP = 3
 @onready var hitbox: Area2D = $Hitbox
 
 func _ready() -> void:
-	hitbox.connect("body_entered", self._on_body_entered)
+	hitbox.connect("body_entered", self.take_damage)
 
 func _process(delta: float) -> void:
 	# Check RayCast2D collisions for direction change
@@ -22,15 +22,16 @@ func _process(delta: float) -> void:
 		direction = 1
 		animated_sprite.flip_h = false
 	position.x += direction * SPEED * delta
+	
+func take_damage(amount):
+	HP -= amount.damage
+	animated_sprite.modulate = Color(225, 0, 0)  # Red on hit
+	if HP <= 0:
+		die()
+	await get_tree().create_timer(.2).timeout
+	animated_sprite.modulate = Color(1, 1, 1)
+	print("Enemy HP:", HP)
 
-func _on_body_entered(body: Node) -> void:
 
-	if body.name == "SmokeAttack":  # Check if the colliding body is the bolt
-		HP -= 1 
-		animated_sprite.modulate = Color(225, 0, 0)  # Red on hit
-		body.queue_free()
-		await get_tree().create_timer(.2).timeout
-		animated_sprite.modulate = Color(1, 1, 1)
-		if HP <= 0:
-			print("Slime is defeated!")
-			queue_free()
+func die():
+	queue_free()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc70w3w0x68qf"
-path="res://.godot/imported/IdleR_strip4.png-55c5136630b177ffa926dcd0b093d498.ctex"
+uid="uid://boewo46r0oqvg"
+path="res://.godot/imported/WalkR_strip8.png-eef1cda5bcadc677f6dba5a1ca7e6998.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/character_animations/IdleR_strip4.png"
-dest_files=["res://.godot/imported/IdleR_strip4.png-55c5136630b177ffa926dcd0b093d498.ctex"]
+source_file="res://Assets/Character/WalkR_strip8.png"
+dest_files=["res://.godot/imported/WalkR_strip8.png-eef1cda5bcadc677f6dba5a1ca7e6998.ctex"]
 
 [params]
 

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyk3fr2gjggbv"]
+
+[ext_resource type="Script" path="res://Scripts/Upgrades.gd" id="1_6yk85"]
+[ext_resource type="Texture2D" uid="uid://cfhdwt10avox4" path="res://Assets/spritesheet_16x16.png" id="2_qnsit"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bq7hi"]
+radius = 8.0
+
+[node name="AttackUpgrade" type="Node2D"]
+script = ExtResource("1_6yk85")
+upgrade_type = "attack"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qnsit")
+region_enabled = true
+region_rect = Rect2(0.567345, 176.968, 15.6076, 14.2698)
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_bq7hi")

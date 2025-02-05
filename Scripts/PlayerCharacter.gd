@@ -23,10 +23,14 @@ var HPS = 1
 
 
 # Magicpoints
-var MAX_MP: float= 3
+var MAX_MP: float = 3
 var MP: float = MAX_MP
 var MPS: float = 1
 var MP_COST: float = 1
+var MP_COST_2: float = 2
+
+# Attack damage
+var damage: int = 1
 
 var time_accumulated: float = 0.0
 
@@ -86,7 +90,6 @@ func update_ui() -> void:
 
 	
 func _physics_process(delta: float) -> void:
-	
 	# Add gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta	
@@ -115,16 +118,10 @@ func _physics_process(delta: float) -> void:
 		
 	# Attack
 	if Input.is_action_just_pressed("attack") and not is_attacking:
-
-		if MP < MP_COST:
-			print("Not enough MP")
-		else:	
-			is_attacking = true
-			animated_sprite.play("attack")
-			shoot_projectile()
-			MP -= MP_COST
-			await animated_sprite.animation_finished
-			is_attacking = false
+		attack("attack", 1)
+			
+	if Input.is_action_just_pressed("attack2") and not is_attacking:
+		attack("attack2", 2)
 
 	
 	# Flips sprite
@@ -161,20 +158,49 @@ func _physics_process(delta: float) -> void:
 		attack_point.global_position = global_position + Vector2(-OFFSET, 0)  # Move Marker2D to the left
 	else:  # If the character is facing right
 		attack_point.global_position = global_position + Vector2(OFFSET, 0)  # Move Marker2D to the right
+		
+func attack(type, cost) -> void:
+	if MP < cost:
+		print("Not enough MP")
+	else:	
+		is_attacking = true
+		animated_sprite.play("attack")
+		shoot_projectile(type)
+		MP -= cost
+		await animated_sprite.animation_finished
+		is_attacking = false
 	
-func shoot_projectile() -> void:
+	
+func shoot_projectile(attack) -> void:
 	var POJECTILE_SPEED = 1000
-	
 	var projectile = smoke_attack.instantiate()
-	projectile.global_position = $AttackPoint.global_position # Shoor from marker
+	projectile.global_position = $AttackPoint.global_position  # Shoot from marker
 	var direction = -1 if animated_sprite.flip_h else 1
 	projectile.linear_velocity = Vector2(direction * POJECTILE_SPEED, 0)
-	
-	# Add the projectile to the scene
+
+	# Set projectile damage
+	if attack == "attack2":
+		projectile.damage = damage  # Stronger attack
+		var sprite = projectile.get_node("Smoke")
+		sprite.scale = Vector2(7, 7)
+		sprite.modulate = Color(1, 0, 10)
+	else:
+		projectile.damage = damage  # Normal attack
+	projectile.get_node("Smoke").flip_h = direction < 0
 	get_parent().add_child(projectile)
 
-	# Flip the projectile sprite based on direction
-	var sprite = projectile.get_node("Smoke")  # Assuming "Smoke" is the name of the sprite node
-	sprite.flip_h = direction < 0 
+	
+# Function to handle upgrades
+func apply_upgrade(upgrade_type: String, amount: int):
+	match upgrade_type:
+		"mana":
+			MAX_MP += amount
+			MP += amount
+		"life":
+			MAX_HP += amount
+			HP += amount
+		"attack":
+			damage += 1
+			
 	
 	

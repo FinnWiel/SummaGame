@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4vny8xs2g082"
-path="res://.godot/imported/FallR_strip2.png-727b5c0abefb26f1e43a8c51e2c33481.ctex"
+uid="uid://crliaj6auef6v"
+path="res://.godot/imported/2.png-1c1258d6fd194fda1529869a4f4d21b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/character_animations/FallR_strip2.png"
-dest_files=["res://.godot/imported/FallR_strip2.png-727b5c0abefb26f1e43a8c51e2c33481.ctex"]
+source_file="res://Assets/Background/Clouds 1/2.png"
+dest_files=["res://.godot/imported/2.png-1c1258d6fd194fda1529869a4f4d21b6.ctex"]
 
 [params]
 

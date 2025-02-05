@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boewo46r0oqvg"
-path="res://.godot/imported/WalkR_strip8.png-8c8b2c841713ae8b1a8b4df762de57d2.ctex"
+uid="uid://cctelbyrebk13"
+path="res://.godot/imported/death_frame.png-7ae9272131684ca6543dbba8b31370e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/character_animations/WalkR_strip8.png"
-dest_files=["res://.godot/imported/WalkR_strip8.png-8c8b2c841713ae8b1a8b4df762de57d2.ctex"]
+source_file="res://Assets/Character/death_frame.png"
+dest_files=["res://.godot/imported/death_frame.png-7ae9272131684ca6543dbba8b31370e8.ctex"]
 
 [params]
 

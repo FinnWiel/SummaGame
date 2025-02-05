@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b01f2drypp3a6"
-path="res://.godot/imported/background1.png-03545e849c721f9b1f6f1b8d30091b1b.ctex"
+uid="uid://8bb1mw56j64s"
+path="res://.godot/imported/BirdSpriteBig.png-4d223371cdb56bd7291067d05e24bcc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/environment/backgrounds/background1.png"
-dest_files=["res://.godot/imported/background1.png-03545e849c721f9b1f6f1b8d30091b1b.ctex"]
+source_file="res://Assets/Enemies/BirdSpriteBig.png"
+dest_files=["res://.godot/imported/BirdSpriteBig.png-4d223371cdb56bd7291067d05e24bcc9.ctex"]
 
 [params]
 

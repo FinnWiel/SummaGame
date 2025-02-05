@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5lkcbixqfvsr"]
+
+[ext_resource type="Texture2D" uid="uid://cfhdwt10avox4" path="res://Assets/spritesheet_16x16.png" id="2_g0too"]
+
+[node name="UpgradeIcon" type="Node2D"]
+position = Vector2(-9, -8)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.724643, 0.724643, 0.724643, 1)
+position = Vector2(9, 8)
+scale = Vector2(0.863294, 0.781576)
+texture = ExtResource("2_g0too")
+region_enabled = true
+region_rect = Rect2(240.271, 255.346, 16.1994, 16.5498)
