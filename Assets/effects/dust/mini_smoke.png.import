@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b47x1w837bdqq"
-path="res://.godot/imported/mini_smoke.png-5a31efe50f54960f890437ac6411f058.ctex"
+path="res://.godot/imported/mini_smoke.png-8f558980ee6df793db4c76ac6425e8a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Effects/dust/mini_smoke.png"
-dest_files=["res://.godot/imported/mini_smoke.png-5a31efe50f54960f890437ac6411f058.ctex"]
+source_file="res://Assets/effects/dust/mini_smoke.png"
+dest_files=["res://.godot/imported/mini_smoke.png-8f558980ee6df793db4c76ac6425e8a8.ctex"]
 
 [params]
 

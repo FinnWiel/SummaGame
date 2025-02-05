@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 500.0
+var SPEED = 500.0
 const JUMP_VELOCITY = -500.0
 const DOUBLE_JUMP_VELOCITY = -450.0
 const DECELERATION_GROUND = 9000.0 
@@ -13,7 +13,7 @@ const DECELERATION_AIR = 800.0
 @onready var game_ui: Node2D = $"../UI/GameUI"
 
 var jump_particles_played = false
-var is_double_jump = false # Doubleump tracking variables
+var extra_jumps = 1 # Double jumps
 var is_attacking = false
 
 # Hitpoints
@@ -101,11 +101,14 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
-			is_double_jump = false  # Reset double jump when on the ground
+			extra_jumps = 1  # Reset jumps when touching the ground
+			if hasJumpUpgrade:
+				extra_jumps = 2  # Allow an extra jump if upgrade is applied
 			jump_particles_played = false
-		elif not is_double_jump:
+		elif extra_jumps > 0:
 			velocity.y = DOUBLE_JUMP_VELOCITY
-			is_double_jump = true
+			extra_jumps -= 1  # Use up a double jump
+
 
 	# Jump particles
 	if not is_on_floor() and not jump_particles_played:
@@ -188,7 +191,13 @@ func shoot_projectile(attack) -> void:
 		projectile.damage = damage  # Normal attack
 	projectile.get_node("Smoke").flip_h = direction < 0
 	get_parent().add_child(projectile)
-
+	
+# Upgrade Trackers
+var hasManaUpgrade: bool = false
+var hasLifeUpgrade: bool = false
+var hasAttackUpgrade: bool = false
+var hasSpeedUpgrade: bool = false
+var hasJumpUpgrade: bool = false
 	
 # Function to handle upgrades
 func apply_upgrade(upgrade_type: String, amount: int):
@@ -196,11 +205,17 @@ func apply_upgrade(upgrade_type: String, amount: int):
 		"mana":
 			MAX_MP += amount
 			MP += amount
+			hasManaUpgrade = true
 		"life":
 			MAX_HP += amount
 			HP += amount
+			hasLifeUpgrade = true
 		"attack":
 			damage += 1
-			
-	
-	
+			hasAttackUpgrade = true
+		"speed":
+			SPEED = 600
+			hasSpeedUpgrade = true
+		"jump":
+			hasJumpUpgrade = true
+			extra_jumps = 2

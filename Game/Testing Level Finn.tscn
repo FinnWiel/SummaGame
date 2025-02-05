@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cggxh1hrhc6rf"]
+[gd_scene load_steps=15 format=4 uid="uid://cggxh1hrhc6rf"]
 
 [ext_resource type="PackedScene" uid="uid://c2w8dnjfol73f" path="res://Scenes/ParallaxBackground.tscn" id="1_yerqs"]
 [ext_resource type="PackedScene" uid="uid://bljchmhxttxjb" path="res://Scenes/PlayerCharacter.tscn" id="2_6camv"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c6xsi212vkdsx" path="res://Scenes/ManaUpgrade.tscn" id="7_20o75"]
 [ext_resource type="PackedScene" uid="uid://b1rnabp07wuew" path="res://Scenes/LifeUpgrade.tscn" id="7_28q2b"]
 [ext_resource type="PackedScene" uid="uid://dyk3fr2gjggbv" path="res://Scenes/AttackUpgrade.tscn" id="9_m276y"]
+[ext_resource type="PackedScene" uid="uid://du56now7saq5h" path="res://Scenes/SpeedUpgrade.tscn" id="10_suwvi"]
+[ext_resource type="PackedScene" uid="uid://fagix4jnn8w6" path="res://Scenes/DoubleJumpUpgrade.tscn" id="11_0v2g5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8hxo"]
 texture = ExtResource("3_3uoas")
@@ -669,7 +671,7 @@ tile_set = SubResource("TileSet_2tcg5")
 rendering_quadrant_size = 8
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_6camv")]
-position = Vector2(715, 179)
+position = Vector2(715, 208)
 scale = Vector2(4, 4)
 
 [node name="Slime" parent="." instance=ExtResource("4_cmtty")]
@@ -691,4 +693,12 @@ scale = Vector2(3, 3)
 
 [node name="AttackUpgrade" parent="." instance=ExtResource("9_m276y")]
 position = Vector2(418, 262)
+scale = Vector2(3, 3)
+
+[node name="SpeedUpgrade" parent="." instance=ExtResource("10_suwvi")]
+position = Vector2(1016, 265)
+scale = Vector2(3, 3)
+
+[node name="DoubleJumpUpgrade" parent="." instance=ExtResource("11_0v2g5")]
+position = Vector2(718, 140)
 scale = Vector2(3, 3)

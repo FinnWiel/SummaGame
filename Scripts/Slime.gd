@@ -26,9 +26,9 @@ func _process(delta: float) -> void:
 func take_damage(amount):
 	HP -= amount.damage
 	animated_sprite.modulate = Color(225, 0, 0)  # Red on hit
+	await get_tree().create_timer(.2).timeout
 	if HP <= 0:
 		die()
-	await get_tree().create_timer(.2).timeout
 	animated_sprite.modulate = Color(1, 1, 1)
 	print("Enemy HP:", HP)
 
