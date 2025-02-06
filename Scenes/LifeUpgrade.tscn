@@ -18,5 +18,4 @@ region_rect = Rect2(210.912, 224.046, 10.1771, 16.1267)
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_gljp7")

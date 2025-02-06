@@ -179,7 +179,7 @@ animations = [{
 radius = 4.2
 height = 14.8
 
-[node name="PlayerCharacter" type="CharacterBody2D"]
+[node name="PlayerCharacter" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(10, 10)
 script = ExtResource("1_pvbls")
 

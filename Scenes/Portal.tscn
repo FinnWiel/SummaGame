@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://cg6s3tmwja8nk"]
+
+[ext_resource type="Texture2D" uid="uid://btvhgxx4eckar" path="res://Assets/Dimensional_Portal.png" id="1_usokt"]
+[ext_resource type="Script" path="res://Scripts/Portal.gd" id="1_y4yea"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jss2k"]
+atlas = ExtResource("1_usokt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvbmd"]
+atlas = ExtResource("1_usokt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1bgp"]
+atlas = ExtResource("1_usokt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsfh0"]
+atlas = ExtResource("1_usokt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iib16"]
+atlas = ExtResource("1_usokt")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfpqu"]
+atlas = ExtResource("1_usokt")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lkfau"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jss2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvbmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1bgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsfh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iib16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfpqu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tfgc0"]
+radius = 6.0
+
+[node name="Portal" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_lkfau")
+autoplay = "default"
+frame_progress = 0.0900246
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_y4yea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_tfgc0")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

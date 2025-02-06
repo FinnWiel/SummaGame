@@ -4,16 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://cfhdwt10avox4" path="res://Assets/spritesheet_16x16.png" id="2_myfa2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnehf"]
-size = Vector2(14, 18)
+size = Vector2(12, 17)
 
 [node name="ManaUpgrade" type="Node2D"]
-scale = Vector2(2, 2)
 script = ExtResource("1_ga1kb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_myfa2")
 region_enabled = true
-region_rect = Rect2(97.6191, 239.94, 12.7834, 16.1385)
+region_rect = Rect2(97.6065, 239.337, 12.932, 16.6481)
 
 [node name="Hitbox" type="Area2D" parent="."]
 

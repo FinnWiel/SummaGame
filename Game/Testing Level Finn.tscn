@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://cggxh1hrhc6rf"]
+[gd_scene load_steps=17 format=4 uid="uid://cggxh1hrhc6rf"]
 
+[ext_resource type="Script" path="res://Scripts/RandomPowerup.gd" id="1_k5qdi"]
 [ext_resource type="PackedScene" uid="uid://c2w8dnjfol73f" path="res://Scenes/ParallaxBackground.tscn" id="1_yerqs"]
 [ext_resource type="PackedScene" uid="uid://bljchmhxttxjb" path="res://Scenes/PlayerCharacter.tscn" id="2_6camv"]
 [ext_resource type="Texture2D" uid="uid://qqbchvllsyu8" path="res://Assets/tilesets/8x8_nature.png" id="3_3uoas"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dyk3fr2gjggbv" path="res://Scenes/AttackUpgrade.tscn" id="9_m276y"]
 [ext_resource type="PackedScene" uid="uid://du56now7saq5h" path="res://Scenes/SpeedUpgrade.tscn" id="10_suwvi"]
 [ext_resource type="PackedScene" uid="uid://fagix4jnn8w6" path="res://Scenes/DoubleJumpUpgrade.tscn" id="11_0v2g5"]
+[ext_resource type="PackedScene" uid="uid://cvnj4f8cdg537" path="res://Scenes/RandomPowerup.tscn" id="12_vn70f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8hxo"]
 texture = ExtResource("3_3uoas")
@@ -661,6 +663,7 @@ sources/1 = SubResource("TileSetAtlasSource_w8hxo")
 sources/2 = SubResource("TileSetAtlasSource_e6m3x")
 
 [node name="TestingLevelFinn" type="Node2D"]
+script = ExtResource("1_k5qdi")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_yerqs")]
 
@@ -702,3 +705,8 @@ scale = Vector2(3, 3)
 [node name="DoubleJumpUpgrade" parent="." instance=ExtResource("11_0v2g5")]
 position = Vector2(718, 140)
 scale = Vector2(3, 3)
+
+[node name="RandomPowerup" parent="." instance=ExtResource("12_vn70f")]
+position = Vector2(877, 264)
+scale = Vector2(3, 3)
+script = null
