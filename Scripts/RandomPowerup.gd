@@ -15,12 +15,18 @@ func _ready():
 	load_random_scene()
 
 func load_random_scene():
+	if scenes.is_empty():
+		print("No more power-ups left to load.")
+		return
+	
 	# Clear previous scene if one exists
 	for child in scene_container.get_children():
 		child.queue_free()
 	
-	# Pick a random scene
-	var random_scene_path = scenes[randi() % scenes.size()]
+	# Pick a random scene and remove it from the list
+	var random_index = randi() % scenes.size()
+	var random_scene_path = scenes.pop_at(random_index)
+	
 	var next_scene = load(random_scene_path).instantiate()
 	
 	# Add the new scene as a child of SceneContainer
