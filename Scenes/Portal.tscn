@@ -64,7 +64,7 @@ visibility_layer = 2
 z_index = -1
 sprite_frames = SubResource("SpriteFrames_lkfau")
 autoplay = "default"
-frame_progress = 0.0900246
+frame_progress = 0.35213
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("1_y4yea")

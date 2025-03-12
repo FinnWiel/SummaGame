@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvvvlq27hlvwg"]
+
+[ext_resource type="Texture2D" uid="uid://bih06prxgsal6" path="res://Assets/effects/Free Smoke Fx  Pixel 05.png" id="1_n37pc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1whru"]
+atlas = ExtResource("1_n37pc")
+region = Rect2(384, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqlqm"]
+atlas = ExtResource("1_n37pc")
+region = Rect2(320, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6reci"]
+atlas = ExtResource("1_n37pc")
+region = Rect2(256, 640, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6yoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1whru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqlqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6reci")
+}],
+"loop": true,
+"name": &"jump_animation",
+"speed": 3.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+modulate = Color(0.641934, 0.641934, 0.641934, 1)
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_o6yoq")
+animation = &"jump_animation"
+frame_progress = 0.813208
+offset = Vector2(0, 4)

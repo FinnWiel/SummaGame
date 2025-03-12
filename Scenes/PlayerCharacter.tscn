@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bljchmhxttxjb"]
+[gd_scene load_steps=30 format=3 uid="uid://bljchmhxttxjb"]
 
 [ext_resource type="Texture2D" uid="uid://cc70w3w0x68qf" path="res://Assets/Character/IdleR_strip4.png" id="1_nj01r"]
 [ext_resource type="Script" path="res://Scripts/PlayerCharacter.gd" id="1_pvbls"]
@@ -179,6 +179,9 @@ animations = [{
 radius = 4.2
 height = 14.8
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_u1o01"]
+radius = 5.0
+
 [node name="PlayerCharacter" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(10, 10)
 script = ExtResource("1_pvbls")
@@ -204,3 +207,13 @@ position_smoothing_speed = 2.0
 
 [node name="AttackPoint" type="Marker2D" parent="."]
 position = Vector2(9.1, 0.8)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_u1o01")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

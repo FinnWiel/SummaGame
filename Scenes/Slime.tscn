@@ -85,13 +85,18 @@ sprite_frames = SubResource("SpriteFrames_3erhm")
 autoplay = "default"
 frame_progress = 0.76415
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." groups=["enemies"]]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 11)
 shape = SubResource("CircleShape2D_8py06")
+
+[node name="RayCastDown" type="RayCast2D" parent="."]
+position = Vector2(8, 18)
+rotation = 6.28319
+target_position = Vector2(0, 8)
 
 [node name="RaycastRight" type="RayCast2D" parent="."]
 position = Vector2(0, 11)

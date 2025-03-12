@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://fagix4jnn8w6" path="res://Scenes/DoubleJumpUpgrade.tscn" id="11_0v2g5"]
 [ext_resource type="PackedScene" uid="uid://cvnj4f8cdg537" path="res://Scenes/RandomPowerup.tscn" id="12_vn70f"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8hxo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uy0kf"]
 texture = ExtResource("3_3uoas")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
@@ -435,7 +435,7 @@ texture_region_size = Vector2i(8, 8)
 11:14/0 = 0
 8:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6m3x"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jgl47"]
 texture = ExtResource("4_f2mvh")
 texture_region_size = Vector2i(8, 8)
 use_texture_padding = false
@@ -659,8 +659,8 @@ use_texture_padding = false
 [sub_resource type="TileSet" id="TileSet_2tcg5"]
 tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_w8hxo")
-sources/2 = SubResource("TileSetAtlasSource_e6m3x")
+sources/1 = SubResource("TileSetAtlasSource_uy0kf")
+sources/2 = SubResource("TileSetAtlasSource_jgl47")
 
 [node name="TestingLevelFinn" type="Node2D"]
 script = ExtResource("1_k5qdi")

@@ -63,3 +63,5 @@ animations = [{
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_pkckb")
 animation = &"jump_particles"
+frame = 6
+frame_progress = 1.0

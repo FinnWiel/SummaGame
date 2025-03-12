@@ -5,9 +5,13 @@ const SPEED = 200
 var direction = 1
 var HP = 3 
 
+const player_character = preload("res://Scripts/PlayerCharacter.gd")
 @onready var raycast_right: RayCast2D = $RaycastRight
 @onready var raycast_left: RayCast2D = $RaycastLeft
+@onready var ray_cast_down: RayCast2D = $RayCastDown
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+
 @onready var hitbox: Area2D = $Hitbox
 
 func _ready() -> void:
@@ -15,13 +19,24 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Check RayCast2D collisions for direction change
-	if raycast_right.is_colliding():
+	var collider_right = raycast_right.get_collider()
+	var collider_left = raycast_left.get_collider()
+	
+	if !ray_cast_down.is_colliding():
+		toggle_direction()
+	if raycast_right.is_colliding() and !collider_right.is_in_group("player"):
+		toggle_direction()
+	elif raycast_left.is_colliding() and !collider_left.is_in_group("player"):
+		toggle_direction()
+	position.x += direction * SPEED * delta
+
+func toggle_direction():
+	if direction == 1:
 		direction = -1
 		animated_sprite.flip_h = true
-	elif raycast_left.is_colliding():
+	else:
 		direction = 1
 		animated_sprite.flip_h = false
-	position.x += direction * SPEED * delta
 	
 func take_damage(amount):
 	HP -= amount.damage

@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwpp8s4bjtv1d"]
+
+[ext_resource type="Texture2D" uid="uid://bih06prxgsal6" path="res://Assets/effects/Free Smoke Fx  Pixel 05.png" id="1_nshx3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1whru"]
+atlas = ExtResource("1_nshx3")
+region = Rect2(384, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqlqm"]
+atlas = ExtResource("1_nshx3")
+region = Rect2(320, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6reci"]
+atlas = ExtResource("1_nshx3")
+region = Rect2(256, 640, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6yoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1whru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqlqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6reci")
+}],
+"loop": true,
+"name": &"speed_animation",
+"speed": 6.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+z_index = -1
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_o6yoq")
+animation = &"speed_animation"
+frame_progress = 0.523338
+offset = Vector2(0, 36)
