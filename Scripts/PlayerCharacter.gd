@@ -236,11 +236,12 @@ func apply_upgrade(upgrade_type: String, amount: int):
 			hasAttackUpgrade = true
 			update_upgrade_icons()
 		"speed":
-			SPEED = 600
+			SPEED += 100
 			hasSpeedUpgrade = true
 			update_upgrade_icons()
 		"jump":
 			hasJumpUpgrade = true
+<<<<<<< Updated upstream
 			extra_jumps = 2
 			update_upgrade_icons()
 
@@ -288,3 +289,6 @@ func update_upgrade_icons():
 
 			# Move the offset for the next icon
 			x_offset += UPGRADE_ICON_SIZE.x * ICON_SCALE.x - ICON_MARGIN
+=======
+			extra_jumps += 1
+>>>>>>> Stashed changes
