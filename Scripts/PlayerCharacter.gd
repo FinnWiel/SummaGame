@@ -11,6 +11,7 @@ const DECELERATION_AIR = 800.0
 @onready var smoke_attack = preload("res://Scenes/SmokeAttack.tscn")
 @onready var attack_point: Marker2D = $AttackPoint
 @onready var game_ui: Node2D = $"../UI/GameUI"
+@onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 # Upgrade Trackers
 var hasManaUpgrade: bool = false
@@ -202,12 +203,16 @@ func shoot_projectile(attack) -> void:
 	get_parent().add_child(projectile)
 
 func _on_hitbox_area_entered(area) -> void:
-	print("enter it")
 	if area.is_in_group("enemies") and !being_attacked:  # Ensure enemies are in this group
 		being_attacked = true
 		take_damage(1)  # Adjust damage as needed
-		await get_tree().create_timer(invincibility_time).timeout
-		being_attacked = false
+		if HP <= 0:
+			return
+		else:
+			player_sprite.modulate = Color(1.2,1.2,1.2)
+			await get_tree().create_timer(invincibility_time).timeout
+			player_sprite.modulate = Color(1,1,1,1)
+			being_attacked = false
 
 func take_damage(amount):
 	HP -= amount
@@ -216,7 +221,7 @@ func take_damage(amount):
 
 func die():
 	print("Player died!")
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://GUI/Menus/DeathMenu.tscn")
 	
 # Function to handle upgrades
 func apply_upgrade(upgrade_type: String, amount: int):
@@ -241,8 +246,7 @@ func apply_upgrade(upgrade_type: String, amount: int):
 			update_upgrade_icons()
 		"jump":
 			hasJumpUpgrade = true
-<<<<<<< Updated upstream
-			extra_jumps = 2
+			extra_jumps += 1
 			update_upgrade_icons()
 
 
@@ -289,6 +293,3 @@ func update_upgrade_icons():
 
 			# Move the offset for the next icon
 			x_offset += UPGRADE_ICON_SIZE.x * ICON_SCALE.x - ICON_MARGIN
-=======
-			extra_jumps += 1
->>>>>>> Stashed changes

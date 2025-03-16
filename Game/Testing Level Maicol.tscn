@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c5s0s1ni8yv1j" path="res://Scenes/Slime.tscn" id="5_1il3r"]
 [ext_resource type="PackedScene" uid="uid://b10xyobtah24n" path="res://GUI/Game UI/GameUI.tscn" id="6_uvnk3"]
 [ext_resource type="PackedScene" uid="uid://c6xsi212vkdsx" path="res://Scenes/ManaUpgrade.tscn" id="7_0t70e"]
-[ext_resource type="PackedScene" uid="uid://b0gi877f0tfso" path="res://GUI/PauseMenu/PauseMenu.tscn" id="7_wlncs"]
+[ext_resource type="PackedScene" uid="uid://b0gi877f0tfso" path="res://GUI/Menus/PauseMenu.tscn" id="7_wlncs"]
 [ext_resource type="PackedScene" uid="uid://b1rnabp07wuew" path="res://Scenes/LifeUpgrade.tscn" id="8_n36hg"]
 [ext_resource type="PackedScene" uid="uid://dyk3fr2gjggbv" path="res://Scenes/AttackUpgrade.tscn" id="9_afexr"]
 [ext_resource type="PackedScene" uid="uid://du56now7saq5h" path="res://Scenes/SpeedUpgrade.tscn" id="10_6gld1"]
