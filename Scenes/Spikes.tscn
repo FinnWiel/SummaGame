@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqx5nb2rfdnrw"]
+
+[ext_resource type="Texture2D" uid="uid://3tiegdohn65g" path="res://Assets/environment/Sprite-0001.png" id="1_q8wtp"]
+[ext_resource type="Script" path="res://Scripts/SpikeHitbox.gd" id="2_7l1ub"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tqmdf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v22s2"]
+size = Vector2(3.25, 2.5)
+
+[node name="Spikes" type="Node2D"]
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_tqmdf")
+position = Vector2(1.25, -8)
+texture = ExtResource("1_q8wtp")
+
+[node name="Hitbox" type="Area2D" parent="Sprite2D"]
+position = Vector2(-4.75, 1.5)
+script = ExtResource("2_7l1ub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+position = Vector2(3.25, 1.5)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_v22s2")
+
+[connection signal="body_entered" from="Sprite2D/Hitbox" to="Sprite2D/Hitbox" method="_on_body_entered"]
