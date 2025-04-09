@@ -13,6 +13,12 @@ const DECELERATION_AIR = 800.0
 @onready var game_ui: Node2D = $"../UI/GameUI"
 @onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var gust_sound: AudioStreamPlayer2D = $GustSound
+@onready var jump_sound: AudioStreamPlayer2D = $JumpSound
+@onready var damage_sound: AudioStreamPlayer2D = $DamageSound
+@onready var background_sound: AudioStreamPlayer2D = $BackgroundSound
+@onready var boss_sound: AudioStreamPlayer2D = $BossSound
+
 # Upgrade Trackers
 var hasManaUpgrade: bool = false
 var hasLifeUpgrade: bool = false
@@ -42,9 +48,12 @@ var MP_COST_2: float = 2
 # Attack damage
 var damage: int = 1
 
-var invincibility_time: float = 1.0
+var invincibility_time: float = 0.75
 
 var time_accumulated: float = 0.0
+
+func _ready() -> void:
+	background_sound.play()
 
 func _process(delta: float) -> void:
 	time_accumulated += delta
@@ -111,6 +120,7 @@ func _physics_process(delta: float) -> void:
 	# Jumping
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
+			jump_sound.play()
 			velocity.y = JUMP_VELOCITY
 			extra_jumps = 1  # Reset jumps when touching the ground
 			if hasJumpUpgrade:
@@ -185,6 +195,7 @@ func attack(type, cost) -> void:
 	
 	
 func shoot_projectile(attack) -> void:
+	gust_sound.play()
 	var POJECTILE_SPEED = 1000
 	var projectile = smoke_attack.instantiate()
 	projectile.global_position = $AttackPoint.global_position  # Shoot from marker
@@ -209,12 +220,15 @@ func _on_hitbox_area_entered(area) -> void:
 		if HP <= 0:
 			return
 		else:
-			player_sprite.modulate = Color(1.2,1.2,1.2)
+			player_sprite.modulate = Color(0.545098, 0, 0, 1.2)
+			SPEED = 175.0
 			await get_tree().create_timer(invincibility_time).timeout
+			SPEED = 500.0
 			player_sprite.modulate = Color(1,1,1,1)
 			being_attacked = false
 
 func take_damage(amount):
+	damage_sound.play()
 	HP -= amount
 	if HP <= 0:
 		die()

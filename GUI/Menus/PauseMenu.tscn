@@ -45,7 +45,9 @@ text = "Resume"
 process_mode = 3
 clip_contents = true
 layout_mode = 2
-step = 10.0
+max_value = 1.0
+step = 0.1
+value = 1.0
 tick_count = 10
 ticks_on_borders = true
 

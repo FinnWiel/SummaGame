@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bljchmhxttxjb"]
+[gd_scene load_steps=34 format=3 uid="uid://bljchmhxttxjb"]
 
 [ext_resource type="Texture2D" uid="uid://cc70w3w0x68qf" path="res://Assets/Character/IdleR_strip4.png" id="1_nj01r"]
 [ext_resource type="Script" path="res://Scripts/PlayerCharacter.gd" id="1_pvbls"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dafmmnx68y770" path="res://Assets/Character/PushCrateR_strip8.png" id="4_1aov7"]
 [ext_resource type="Texture2D" uid="uid://4vny8xs2g082" path="res://Assets/Character/FallR_strip2.png" id="4_5d0s8"]
 [ext_resource type="Texture2D" uid="uid://boewo46r0oqvg" path="res://Assets/Character/WalkR_strip8.png" id="5_21fiy"]
+[ext_resource type="AudioStream" uid="uid://yjgjml2b7jtw" path="res://Assets/Sounds/background_sound.mp3" id="7_e8yjc"]
+[ext_resource type="AudioStream" uid="uid://bsjwewxj4k2q3" path="res://Assets/Sounds/damage_sound.mp3" id="8_oowsl"]
+[ext_resource type="AudioStream" uid="uid://phwqw2ke1iym" path="res://Assets/Sounds/jump_sound.mp3" id="9_t0sd4"]
+[ext_resource type="AudioStream" uid="uid://cwu766kxm7fb" path="res://Assets/Sounds/gust_sound.mp3" id="10_27v4p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s4pyl"]
 atlas = ExtResource("4_1aov7")
@@ -215,5 +219,18 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 11)
 shape = SubResource("CircleShape2D_u1o01")
+
+[node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_e8yjc")
+volume_db = -12.877
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_oowsl")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_t0sd4")
+
+[node name="GustSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_27v4p")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

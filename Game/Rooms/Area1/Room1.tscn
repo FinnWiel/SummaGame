@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://wk0aa4vo0kok"]
+[gd_scene load_steps=13 format=4 uid="uid://wk0aa4vo0kok"]
 
 [ext_resource type="PackedScene" uid="uid://c2w8dnjfol73f" path="res://Scenes/ParallaxBackground.tscn" id="1_sptdw"]
 [ext_resource type="Texture2D" uid="uid://qqbchvllsyu8" path="res://Assets/tilesets/8x8_nature.png" id="2_kkgcr"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b0gi877f0tfso" path="res://GUI/Menus/PauseMenu.tscn" id="5_vweww"]
 [ext_resource type="PackedScene" uid="uid://cg6s3tmwja8nk" path="res://Scenes/Portal.tscn" id="6_6yhym"]
 [ext_resource type="PackedScene" uid="uid://c5s0s1ni8yv1j" path="res://Scenes/Slime.tscn" id="7_pkggk"]
+[ext_resource type="PackedScene" uid="uid://b23dumn2hxt1w" path="res://Scenes/SlimeBoss.tscn" id="8_jcfvg"]
 [ext_resource type="PackedScene" uid="uid://bjy7hwoupbcio" path="res://Scenes/WorldBorder.tscn" id="9_1y5oe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_on73a"]
@@ -436,6 +437,9 @@ scale = Vector2(4, 4)
 [node name="Portal" parent="." instance=ExtResource("6_6yhym")]
 position = Vector2(2666, -656)
 scale = Vector2(4, 4)
+
+[node name="SlimeBoss" parent="." instance=ExtResource("8_jcfvg")]
+position = Vector2(1384, 49)
 
 [node name="Slime3" parent="." instance=ExtResource("7_pkggk")]
 position = Vector2(2824, -93)

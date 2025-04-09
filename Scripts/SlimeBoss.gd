@@ -1,9 +1,9 @@
 extends Node2D
 
-const SPEED = 200
+const SPEED = 150
 
 var direction = 1
-var HP = 3 
+var HP = 12
 
 const player_character = preload("res://Scripts/PlayerCharacter.gd")
 @onready var raycast_right: RayCast2D = $RaycastRight

@@ -12,10 +12,6 @@ var bus_name: String
 
 var bus_index: int
 
-func _on_value_changed(value: float) -> void:
-	# If you're using Godot 3, replace linear_to_db() with linear2db()
-	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
-
 func _ready():
 	# Hide the menu at the start
 	visible = false
@@ -24,9 +20,13 @@ func _ready():
 	quit_button.pressed.connect(_on_quit_pressed)
 	
 	bus_index = AudioServer.get_bus_index(bus_name)
+
+	# Ensure the slider value starts correctly (converting dB to linear scale)
+	var current_db = AudioServer.get_bus_volume_db(bus_index)
+	volume_slider.value = db_to_linear(current_db)  # Maps dB (0) to 1.0
+
+	# Connect volume slider event
 	volume_slider.value_changed.connect(_on_value_changed)
-	# If you're using Godot 3, replace db_to_linear() with `db2linear()
-	volume_slider.value = db_to_linear(AudioServer.get_bus_volume_db(bus_index))
 # Toggle pause when Esc is pressed
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -46,3 +46,7 @@ func _on_resume_pressed():
 # Quit button callback
 func _on_quit_pressed():
 	get_tree().quit()
+	
+func _on_value_changed(value: float):
+	# Convert the slider's linear value to dB and apply it
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
