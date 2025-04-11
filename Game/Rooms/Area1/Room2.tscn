@@ -163,7 +163,3 @@ scale = Vector2(4, 4)
 
 [node name="WorldBorder" parent="." instance=ExtResource("9_3wyff")]
 position = Vector2(1727, 1140)
-
-[node name="Portal2" parent="." instance=ExtResource("7_33ht5")]
-position = Vector2(758, 334)
-scale = Vector2(4, 4)

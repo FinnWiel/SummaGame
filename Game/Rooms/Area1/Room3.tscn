@@ -138,11 +138,11 @@ scale = Vector2(4, 4)
 visible = false
 
 [node name="Slime" parent="." instance=ExtResource("7_f1bpf")]
-position = Vector2(2680, 226)
+position = Vector2(2646, 179)
 scale = Vector2(4, 4)
 
 [node name="Slime2" parent="." instance=ExtResource("7_f1bpf")]
-position = Vector2(3147, 224)
+position = Vector2(3286, 180)
 scale = Vector2(4, 4)
 
 [node name="Spikes" parent="." instance=ExtResource("8_0dyr7")]
@@ -170,19 +170,19 @@ position = Vector2(1460, 480)
 position = Vector2(1436, 480)
 
 [node name="Slime3" parent="." instance=ExtResource("7_f1bpf")]
-position = Vector2(1692, 418)
+position = Vector2(1774, 368)
 scale = Vector2(4, 4)
 
 [node name="Slime4" parent="." instance=ExtResource("7_f1bpf")]
-position = Vector2(754, 416)
+position = Vector2(888, 357)
 scale = Vector2(4, 4)
 
 [node name="Slime5" parent="." instance=ExtResource("7_f1bpf")]
-position = Vector2(4164, -1)
+position = Vector2(4258, -46)
 scale = Vector2(4, 4)
 
 [node name="Slime6" parent="." instance=ExtResource("7_f1bpf")]
-position = Vector2(4514, 61)
+position = Vector2(4624, -5)
 scale = Vector2(4, 4)
 
 [node name="Portal" parent="." instance=ExtResource("9_2eddh")]

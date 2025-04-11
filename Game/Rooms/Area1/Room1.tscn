@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://wk0aa4vo0kok"]
+[gd_scene load_steps=13 format=4 uid="uid://wk0aa4vo0kok"]
 
 [ext_resource type="PackedScene" uid="uid://c2w8dnjfol73f" path="res://Scenes/ParallaxBackground.tscn" id="1_sptdw"]
 [ext_resource type="Texture2D" uid="uid://qqbchvllsyu8" path="res://Assets/tilesets/8x8_nature.png" id="2_kkgcr"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://b0gi877f0tfso" path="res://GUI/Menus/PauseMenu.tscn" id="5_vweww"]
 [ext_resource type="PackedScene" uid="uid://cg6s3tmwja8nk" path="res://Scenes/Portal.tscn" id="6_6yhym"]
 [ext_resource type="PackedScene" uid="uid://c5s0s1ni8yv1j" path="res://Scenes/Slime.tscn" id="7_pkggk"]
-[ext_resource type="PackedScene" uid="uid://b23dumn2hxt1w" path="res://Scenes/SlimeBoss.tscn" id="8_jcfvg"]
 [ext_resource type="PackedScene" uid="uid://bjy7hwoupbcio" path="res://Scenes/WorldBorder.tscn" id="9_1y5oe"]
 [ext_resource type="PackedScene" uid="uid://dqx5nb2rfdnrw" path="res://Scenes/Spikes.tscn" id="10_covdh"]
 
@@ -439,9 +438,6 @@ scale = Vector2(4, 4)
 position = Vector2(2666, -656)
 scale = Vector2(4, 4)
 
-[node name="SlimeBoss" parent="." instance=ExtResource("8_jcfvg")]
-position = Vector2(1384, 49)
-
 [node name="Slime3" parent="." instance=ExtResource("7_pkggk")]
 position = Vector2(2824, -93)
 scale = Vector2(4, 4)
@@ -463,7 +459,3 @@ scale = Vector2(1, 1)
 
 [node name="Spikes3" parent="." instance=ExtResource("10_covdh")]
 position = Vector2(739, 416)
-
-[node name="Portal2" parent="." instance=ExtResource("6_6yhym")]
-position = Vector2(735, 285)
-scale = Vector2(4, 4)
