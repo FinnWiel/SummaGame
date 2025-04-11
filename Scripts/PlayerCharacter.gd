@@ -11,62 +11,33 @@ const DECELERATION_AIR = 800.0
 @onready var attack_point: Marker2D = $AttackPoint
 @onready var game_ui: Node2D = $"../UI/GameUI"
 @onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var camera: Camera2D = $Camera2D
 
-<<<<<<< HEAD
 @onready var gust_sound: AudioStreamPlayer2D = $GustSound
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 @onready var damage_sound: AudioStreamPlayer2D = $DamageSound
 @onready var background_sound: AudioStreamPlayer2D = $BackgroundSound
 @onready var boss_sound: AudioStreamPlayer2D = $BossSound
 
-# Upgrade Trackers
-var hasManaUpgrade: bool = false
-var hasLifeUpgrade: bool = false
-var hasAttackUpgrade: bool = false
-var hasSpeedUpgrade: bool = false
-var hasJumpUpgrade: bool = false
-
-=======
->>>>>>> aa53a0dc51a3c8c28f27ef7c36268eb6f26b8d9d
 var being_attacked = false
 var jump_particles_played = false
 var is_attacking = false
-<<<<<<< HEAD
-
-# Hitpoints
-var MAX_HP = 3
-var HP = MAX_HP 
-var HPS = 1
-
-
-# Magicpoints
-var MAX_MP: float = 3
-var MP: float = MAX_MP
-var MPS: float = 1
-var MP_COST: float = 1
-var MP_COST_2: float = 2
 
 # Attack damage
 var damage: int = 1
-
-var invincibility_time: float = 0.75
-
-var time_accumulated: float = 0.0
-
-func _ready() -> void:
-	background_sound.play()
-=======
 var invincibility_time: float = 1.0
+var hitstop_timeout: float = 0.05
 var time_accumulated: float = 0.0
 
+	
 func _ready():
+	background_sound.play()
 	update_upgrade_icons()
 	# Sync runtime variables with singleton
 	if PlayerData.HP > PlayerData.MAX_HP:
 		PlayerData.HP = PlayerData.MAX_HP
 	if PlayerData.MP > PlayerData.MAX_MP:
 		PlayerData.MP = PlayerData.MAX_MP
->>>>>>> aa53a0dc51a3c8c28f27ef7c36268eb6f26b8d9d
 
 func _process(delta: float) -> void:
 	time_accumulated += delta
@@ -125,6 +96,7 @@ func _physics_process(delta: float) -> void:
 			PlayerData.extra_jumps = 1 if not PlayerData.hasJumpUpgrade else 2
 			jump_particles_played = false
 		elif PlayerData.extra_jumps > 0:
+			jump_sound.play()
 			velocity.y = DOUBLE_JUMP_VELOCITY
 			PlayerData.extra_jumps -= 1
 
@@ -172,20 +144,9 @@ func attack(type, cost) -> void:
 		PlayerData.MP -= cost
 		await animated_sprite.animation_finished
 		is_attacking = false
-<<<<<<< HEAD
-	
-	
+		
 func shoot_projectile(attack) -> void:
 	gust_sound.play()
-	var POJECTILE_SPEED = 1000
-	var projectile = smoke_attack.instantiate()
-	projectile.global_position = $AttackPoint.global_position  # Shoot from marker
-	var direction = -1 if animated_sprite.flip_h else 1
-	projectile.linear_velocity = Vector2(direction * POJECTILE_SPEED, 0)
-=======
->>>>>>> aa53a0dc51a3c8c28f27ef7c36268eb6f26b8d9d
-
-func shoot_projectile(attack) -> void:
 	var projectile = smoke_attack.instantiate()
 	projectile.global_position = $AttackPoint.global_position
 	var dir = -1 if animated_sprite.flip_h else 1
@@ -201,38 +162,32 @@ func shoot_projectile(attack) -> void:
 func _on_hitbox_area_entered(area) -> void:
 	if area.is_in_group("enemies") and not being_attacked:
 		being_attacked = true
-<<<<<<< HEAD
 		take_damage(1)  # Adjust damage as needed
-		if HP <= 0:
-			return
-		else:
-			player_sprite.modulate = Color(0.545098, 0, 0, 1.2)
-			SPEED = 175.0
-			await get_tree().create_timer(invincibility_time).timeout
-			SPEED = 500.0
-			player_sprite.modulate = Color(1,1,1,1)
-			being_attacked = false
 
 func take_damage(amount):
 	damage_sound.play()
-	HP -= amount
-	if HP <= 0:
-=======
-		take_damage(1)
-		if PlayerData.HP <= 0:
-			die();
-		player_sprite.modulate = Color(1.2, 1.2, 1.2)
-		await get_tree().create_timer(invincibility_time).timeout
-		player_sprite.modulate = Color(1, 1, 1)
-		being_attacked = false
-
-func take_damage(amount):
 	PlayerData.HP -= amount
+	screen_shake();
 	if PlayerData.HP <= 0:
->>>>>>> aa53a0dc51a3c8c28f27ef7c36268eb6f26b8d9d
-		die()
-
+			die();
+	else:
+		player_sprite.modulate = Color(1.5,1.5,1.5,0.7)
+		Engine.time_scale = 0.1
+		await get_tree().create_timer(hitstop_timeout).timeout
+		Engine.time_scale = 1
+		await get_tree().create_timer(invincibility_time).timeout
+		PlayerData.SPEED = 500.0
+		player_sprite.modulate = Color(1,1,1,1)
+		being_attacked = false
+		
+func screen_shake(intensity := 10, duration := 0.1):
+	print('shake')
+	var tween = create_tween()
+	tween.tween_property(camera, "offset", Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity)), duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(camera, "offset", Vector2.ZERO, duration).set_delay(duration)
+	
 func die():
+	damage_sound.play()
 	print("Player died!")
 	PlayerData.reset()
 	get_tree().change_scene_to_file("res://GUI/Menus/DeathMenu.tscn")

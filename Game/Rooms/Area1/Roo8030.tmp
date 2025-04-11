@@ -463,7 +463,3 @@ scale = Vector2(1, 1)
 
 [node name="Spikes3" parent="." instance=ExtResource("10_covdh")]
 position = Vector2(739, 416)
-
-[node name="Portal2" parent="." instance=ExtResource("6_6yhym")]
-position = Vector2(735, 285)
-scale = Vector2(4, 4)
