@@ -37,7 +37,7 @@ func toggle_direction():
 	
 func take_damage(amount):
 	HP -= amount.damage
-	animated_sprite.modulate = Color(1, 0, 0)  # Red on hit
+	animated_sprite.modulate = Color(0, 0, 1)  # Red on hit
 	await get_tree().create_timer(.2).timeout
 	if HP <= 0:
 		die()

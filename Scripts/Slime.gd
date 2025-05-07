@@ -10,8 +10,7 @@ var velocity: Vector2 = Vector2.ZERO
 
 const player_character = preload("res://Scripts/PlayerCharacter.gd")
 
-@onready var raycast_right: RayCast2D = $RaycastRight
-@onready var raycast_left: RayCast2D = $RaycastLeft
+@onready var raycast_front: RayCast2D = $RaycastFront
 @onready var ray_cast_down: RayCast2D = $RayCastDown 
 @onready var gravity_ray: RayCast2D = $Grav 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -21,8 +20,7 @@ func _ready() -> void:
 	hitbox.connect("body_entered", self.take_damage)
 
 func _process(delta: float) -> void:
-	var collider_right = raycast_right.get_collider()
-	var collider_left = raycast_left.get_collider()
+	var collider_right = raycast_front.get_collider()
 
 	# Gravity simulation using Grav raycast
 	if !gravity_ray.is_colliding():
@@ -38,15 +36,14 @@ func _process(delta: float) -> void:
 	# Direction change logic (uses ray_cast_down)
 	if !ray_cast_down.is_colliding():
 		toggle_direction()
-	if raycast_right.is_colliding() and !collider_right.is_in_group("player"):
-		toggle_direction()
-	elif raycast_left.is_colliding() and !collider_left.is_in_group("player"):
+	if raycast_front.is_colliding() and !collider_right.is_in_group("player"):
 		toggle_direction()
 
 func toggle_direction():
 	direction *= -1
 	animated_sprite.flip_h = !animated_sprite.flip_h
 	ray_cast_down.position.x *= -1
+	raycast_front.position.x *= -1
 
 func take_damage(amount):
 	if amount is RigidBody2D:

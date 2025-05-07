@@ -93,15 +93,10 @@ collision_mask = 2
 position = Vector2(0, 11)
 shape = SubResource("CircleShape2D_8py06")
 
-[node name="RaycastRight" type="RayCast2D" parent="."]
-position = Vector2(0, 11)
+[node name="RaycastFront" type="RayCast2D" parent="."]
+position = Vector2(4, 15)
 rotation = 4.71239
-target_position = Vector2(0, 8)
-
-[node name="RaycastLeft" type="RayCast2D" parent="."]
-position = Vector2(0, 11)
-rotation = 1.5708
-target_position = Vector2(0, 8)
+target_position = Vector2(0, 4)
 
 [node name="Grav" type="RayCast2D" parent="."]
 position = Vector2(0, 10)
@@ -111,3 +106,4 @@ target_position = Vector2(0, 16)
 [node name="RayCastDown" type="RayCast2D" parent="."]
 position = Vector2(9, 18)
 target_position = Vector2(0, 16)
+collide_with_areas = true

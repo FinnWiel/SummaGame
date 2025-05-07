@@ -156,6 +156,7 @@ func shoot_projectile(attack) -> void:
 	if attack == "attack2":
 		sprite.scale = Vector2(7, 7)
 		sprite.modulate = Color(1, 0, 10)
+		projectile.damage += 1
 	sprite.flip_h = dir < 0
 	get_parent().add_child(projectile)
 

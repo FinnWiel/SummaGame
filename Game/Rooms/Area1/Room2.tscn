@@ -116,6 +116,8 @@ sources/0 = SubResource("TileSetAtlasSource_vyyax")
 [node name="Room2" type="Node2D"]
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_ou6qq")]
+scale = Vector2(1.2, 1)
+transform = Transform2D(1.2, 0, 0, 1, 0, -100)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_fbkyf")]
 position = Vector2(641, 356)

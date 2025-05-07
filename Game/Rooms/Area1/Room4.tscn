@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://eq7qoeh7cavt"]
+[gd_scene load_steps=11 format=4 uid="uid://eq7qoeh7cavt"]
 
 [ext_resource type="PackedScene" uid="uid://c2w8dnjfol73f" path="res://Scenes/ParallaxBackground.tscn" id="1_v1m48"]
 [ext_resource type="PackedScene" uid="uid://bljchmhxttxjb" path="res://Scenes/PlayerCharacter.tscn" id="2_1i6nv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b10xyobtah24n" path="res://GUI/Game UI/GameUI.tscn" id="5_mrcyh"]
 [ext_resource type="PackedScene" uid="uid://b0gi877f0tfso" path="res://GUI/Menus/PauseMenu.tscn" id="6_niy7s"]
 [ext_resource type="PackedScene" uid="uid://b23dumn2hxt1w" path="res://Scenes/SlimeBoss.tscn" id="7_aml7w"]
+[ext_resource type="PackedScene" uid="uid://bjy7hwoupbcio" path="res://Scenes/WorldBorder.tscn" id="8_ta71b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_emaed"]
 texture = ExtResource("3_vkycc")
@@ -137,3 +138,6 @@ visible = false
 
 [node name="Slime" parent="." instance=ExtResource("7_aml7w")]
 position = Vector2(1286, 208)
+
+[node name="WorldBorder" parent="." instance=ExtResource("8_ta71b")]
+position = Vector2(1723, 1140)
