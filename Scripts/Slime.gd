@@ -47,6 +47,8 @@ func toggle_direction():
 	direction *= -1
 	animated_sprite.flip_h = !animated_sprite.flip_h
 	ray_cast_down.position.x *= -1
+	raycast_left.position.x *= -1
+	raycast_right.position.x *= -1
 
 func take_damage(amount):
 	if amount is RigidBody2D:
