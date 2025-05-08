@@ -439,23 +439,19 @@ position = Vector2(2666, -656)
 scale = Vector2(4, 4)
 
 [node name="Slime3" parent="." instance=ExtResource("7_pkggk")]
-position = Vector2(2824, -93)
+position = Vector2(2822, -172)
 scale = Vector2(4, 4)
 
 [node name="Slime2" parent="." instance=ExtResource("7_pkggk")]
-position = Vector2(2671, 289)
+position = Vector2(2665, 202)
 scale = Vector2(4, 4)
 
 [node name="Slime" parent="." instance=ExtResource("7_pkggk")]
-position = Vector2(1082, 225)
+position = Vector2(1070, 144)
 scale = Vector2(4, 4)
 
 [node name="WorldBorder" parent="." instance=ExtResource("9_1y5oe")]
 position = Vector2(1723, 1140)
-
-[node name="Spikes2" parent="." instance=ExtResource("10_covdh")]
-position = Vector2(3439, 127)
-scale = Vector2(1, 1)
 
 [node name="Spikes3" parent="." instance=ExtResource("10_covdh")]
 position = Vector2(739, 416)

@@ -15,7 +15,7 @@ func _on_body_entered(body):
 			if ResourceLoader.exists(next_scene):  # Ensure the scene exists
 				get_tree().change_scene_to_file(next_scene)
 			else:
-				print("Next scene does not exist:", next_scene)
+				get_tree().change_scene_to_file("res://GUI/Menus/VictoryMenu.tscn")
 		else:
 			print("Could not determine next scene from:", current_scene)
 
