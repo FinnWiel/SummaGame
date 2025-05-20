@@ -94,7 +94,7 @@ position = Vector2(0, 11)
 shape = SubResource("CircleShape2D_8py06")
 
 [node name="RaycastFront" type="RayCast2D" parent="."]
-position = Vector2(4, 15)
+position = Vector2(4, 14)
 rotation = 4.71239
 target_position = Vector2(0, 4)
 
